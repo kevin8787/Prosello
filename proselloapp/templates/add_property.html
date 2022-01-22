@@ -1,0 +1,78 @@
+{% load static %}
+
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Add Property</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <title>Add Property</title>
+</head>
+<body>
+    <H2>Prosello </H2>
+    <H3>Property Management System</H3>
+
+    <style>
+        form  { display: table;}
+
+        input { display: table-cell; }
+    </style>
+
+<form   method="POST" >
+
+    <h1>Add Property</h1>
+    {% csrf_token %}
+    <div class="form-row">
+		<div class="col-md-4 mb-3">
+            
+            <!-- {{ form.property_name.errors}} -->
+			<!-- <label>Enter Property Name</label> -->
+				{{ form.property_name}}
+				<!-- {{ form.property_name.errors}} -->
+                <br>
+                <br>
+
+                <!-- <label>Enter Property Description</label> -->
+				{{ form.property_desc}}
+				<!-- {{ form.property_desc.errors}} -->
+                <br>
+                <br>
+
+                <!-- <label>Enter Property City</label> -->
+				{{ form.property_city}}
+				<!-- {{ form.property_city.errors}} -->
+                <br>
+                <br>
+
+                <!-- <label>Enter Property Address</label> -->
+				{{ form.property_address}}
+				<!-- {{ form.property_address.errors}} -->
+                <br>
+                <br>
+
+                <!-- <label>Enter Property Price</label> -->
+				{{ form.property_price}}
+				<!-- {{ form.property_price.errors}} -->
+                <br>
+                <br>
+
+                <!-- <label>Enter Property Owner Name</label> -->
+				{{ form.property_owner}}
+				<!-- {{ form.property_owner.errors}} -->
+                <br>
+                <br>
+                <!-- <label>Enter Property contact number</label> -->
+				{{ form.property_contact}}
+				<!-- {{ form.property_contact.errors}} -->
+			<!--<input type="text" class="form-control" placeholder="Enter your 10 digit mobile no" maxlength="10" name="phone" required>-->
+			</div>
+
+	</div>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="Submit" value="Submit">Submit</button>
+</form>
+</body>
+</html>

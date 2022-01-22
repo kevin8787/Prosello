@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USER HOME</title>
+    <h1>USER HOME</h1>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.edit_property{
+  background-color: white;
+  color: black;
+  border: 2px solid #0b65eb;
+}
+
+.view_property:hover {
+  background-color: #0b65eb;
+  color: white;
+}
+
+.add_property {
+  background-color: white;
+  color: black;
+  border: 2px solid #dd0b0b;
+}
+
+.add_property:hover {
+  background-color: #dd0b0b;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+
+  <H2>Prosello </H2> 
+  <H3>Property Management System</H3>
+  
+  <form method="post" action="{% url 'update_property' %}">
+    {% csrf_token%}
+    <button class="button edit_property" type="submit">EDIT PROPERTY</button>
+  </form>
+
+<!--<button class="button view_property">View Property</button>-->
+
+<form method="post" action="{% url 'delete_property' %}">
+  {% csrf_token%}
+  <button class="button delete_property" type="submit">DELETE PROPERTY</button>
+</form>
+
+

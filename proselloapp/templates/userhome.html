@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USER HOME</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+<style>
+
+
+</style>
+</head>
+<body>
+  <H2>Prosello </H2> 
+  <H3>Property Management System</H3>
+
+  <p><a href="index.html">Log Out</a></p>
+  <div class = "center">
+    
+  <form method="post" action="{% url 'view_property' %}">
+    {% csrf_token%}
+    <button class="button view_property" type="submit">VIEW PROPERTY</button>
+  </form>
+
+<!--<button class="button view_property">View Property</button>-->
+
+<form method="post" action="{% url 'add_property' %}">
+  {% csrf_token%}
+  <button class="button add_property" type="submit">ADD PROPERTY</button>
+</form>
+
+<form method="post" action="{% url 'my_property' %}">
+  {% csrf_token%}
+  <button class="button my_property" type="submit">MY PROPERTY</button>
+</form>
+
+</div>
+
+<!--<button class="button add_property">Add Property</button>-->
+
+
+</body>
+</html>

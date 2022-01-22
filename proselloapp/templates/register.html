@@ -1,0 +1,102 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv = "X-UA-Compatible" content="IE-Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Registration</title>
+<link rel="stylesheet" href="{% static 'css/registration.css' %}" type="text/css" media="all" />
+</head>
+
+<body>
+    <script src="{% static '/js/script.js' %}"></script>
+    <H3>Prosello </H3> 
+  <H4>Property Management System</H4>
+    <div class="user">
+        <header class="user__header">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+            <h1 class="user__title">User Registration</h1>
+        </header>
+        
+        <!-- <form class="form" action =" " method="post">
+            
+            {% csrf_token%}
+            <div class="form__group">
+                <input type="text" placeholder="Username" class="form__input" />
+                {{form.username}}
+                {{form.username.errors}}
+            </div>
+            
+            <div class="form__group">
+                <input type="email" placeholder="Email" class="form__input" />
+                {{form.email}}
+                {{form.email.errors}}
+            </div>
+            
+            <div class="form__group">
+                <input type="password" placeholder="Password" class="form__input" />
+                {{form.password1}}
+            </div>
+
+            <div class="form__group">
+                <input type="password" placeholder="Confirm Password" class="form__input" />
+                {{form.password2}}
+                {{form.password2.errors}}
+                
+            </div>
+            <div class="form__group">
+                <input type="text" placeholder="Phone number" class="form__input" />
+                {{form.phone_no}} 
+            </div>
+            <div class="form__group">
+                <input type="text" placeholder="First Name" class="form__input" />
+                {{form.first_name}} 
+            </div>
+            <div class="form__group">
+                <input type="text" placeholder="Last Name" class="form__input" />
+                {{form.last_name}}
+            </div>
+
+            <button class="btn" type="button">Register</button>
+        </form> -->
+        <form action ="" method="post">
+            {% csrf_token%}
+            <div class="new1">
+            <label>Username</label><br>
+            {{form.username}}<br>
+            {{form.username.errors}}
+    
+            <label>Email id</label><br>
+            {{form.email}}<br>
+            {{form.email.errors}}
+    
+    
+            <label>Password</label><br>
+            {{form.password1}}<br>
+            
+            <label>Confirm Password</label><br>
+            {{form.password2}}<br>
+            {{form.password2.errors}}
+    
+            <label>Phone_no</label><br>
+            {{form.phone_no}} <br>
+    
+            <label>First_name</label><br>
+            {{form.first_name}}<br>
+    
+            <label>Last_name</label><br>
+            {{form.last_name}}<br>
+            <br>
+            
+            <input type='Submit' value='Submit'></div>
+        </form>
+    </div>
+    
+   
+
+</body>
+
+</html>
