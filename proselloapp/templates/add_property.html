@@ -65,8 +65,9 @@
                 <br>
                 <!-- <label>Enter Property contact number</label> -->
 				{{ form.property_contact}}
-				<!-- {{ form.property_contact.errors}} -->
+				<!-- {{ form.errors}} -->
 			<!--<input type="text" class="form-control" placeholder="Enter your 10 digit mobile no" maxlength="10" name="phone" required>-->
+
 			</div>
 
 	</div>
@@ -74,5 +75,9 @@
     <br>
     <button class="btn btn-primary" type="Submit" value="Submit">Submit</button>
 </form>
+<button style="background-color:green;">
+    <a href="{% url 'userhome' %}"
+     class="btn btn-secondary btn-sm"
+      >Back</a></button>
 </body>
 </html>

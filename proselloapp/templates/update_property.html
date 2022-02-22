@@ -3,8 +3,27 @@
 <html>
     <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>View Property</title>
+    <link rel="stylesheet" href="{% static 'css/view.css' %}" type="text/css" media="all" />
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+
     <title>Update Property</title>
     <h1>Update Property</h1>
 </head>
-    <body></body>
+    <body>
+        <form action = "" method =POST>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br/>
+            <input type = "submit" value="Update"
+            class="btn btn-secondary">
+        </form>
+        
+    </body>
 </html>

@@ -13,7 +13,7 @@
   <H2>Prosello </H2> 
   <H3>Property Management System</H3>
 
-  <p><a href="index.html">Log Out</a></p>
+  <p><a class="nav-link" href="{% url 'logout' %}">Logout</a></p>
   <div class = "center">
     
   <form method="post" action="{% url 'view_property' %}">
@@ -32,6 +32,8 @@
   {% csrf_token%}
   <button class="button my_property" type="submit">MY PROPERTY</button>
 </form>
+
+
 
 </div>
 

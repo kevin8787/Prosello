@@ -2,12 +2,17 @@
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 /* BASIC */
-
+/* 
 html {
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-}
+} */
 
 body {
+  background-image:url(../image/hero-image.jpg); 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center;
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }

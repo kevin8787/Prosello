@@ -3,7 +3,9 @@ from django.core.exceptions import ValidationError
 
 from properties.models import Property
 
+
 class PropertyForm(forms.ModelForm):
+    print("-----------------------")
     property_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control is-valid',
                                                                                 'placeholder': 'Enter Property name'}),
                                                         error_messages={'required': 'Please Enter Property Name'})
@@ -25,6 +27,7 @@ class PropertyForm(forms.ModelForm):
     property_contact = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control is-valid',
                                                                                 'placeholder': 'Enter Property contact Number'}),
                                                         error_messages={'required': 'Please Enter Property contact number'})
+    # property_image = forms.ImageField(required=False)                                       
 
     class Meta:
         model = Property

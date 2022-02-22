@@ -1,64 +1,83 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
+    <html>
 <head>
-    <title>USER HOME</title>
-    <h1>USER HOME</h1>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
-<style>
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
+    <title>My Property</title>
+    <h1>My Property</h1>
+</head>
+    <body>
+        {% block content %}
+        {{property_list}}
+        {% endblock %}
 
-.edit_property{
-  background-color: white;
-  color: black;
-  border: 2px solid #0b65eb;
-}
-
-.view_property:hover {
-  background-color: #0b65eb;
-  color: white;
-}
-
-.add_property {
-  background-color: white;
-  color: black;
-  border: 2px solid #dd0b0b;
-}
-
-.add_property:hover {
-  background-color: #dd0b0b;
-  color: white;
-}
+    </body>
+</html>
 
 
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>View Property</title>
+    <link rel="stylesheet" href="{% static 'css/view.css' %}" type="text/css" media="all" />
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
 </head>
 <body>
+ <!-- <h1>Property Page</h1> -->
+{% if prop %}
+ <h2>Properties</h2>
+ <!-- <h3>{{prop}}</h3> -->
+ <table>
+     <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>City</th>
+         <th>Address</th>
+         <th>Price</th>
+         <th>Owner Name</th>
+         <th>Contact Number</th>
+     </tr>
+ <tr>
+     {% for pr in prop %}
+     <td>{{pr.property_name}}</td>
+     <td>{{pr.property_desc}}</td>
+     <td>{{pr.property_city}}</td>
+     <td>{{pr.property_address}}</td>
+     <td>{{pr.property_price}}</td>
+     <td>{{pr.property_owner}}</td>
+     <td>{{pr.property_contact}}</td>
+     <td><button style="background-color:green;">
+        <a
+          href="{% url 'update_property' pr.id %}"
+          class="btn btn-secondary btn-sm"
+          >Edit</a></button>
+    </td>
+    <td><button style="background-color:green;">
+        <a
+        href="{% url 'delete_property_url' pr.id %}"
+          class="btn btn-secondary btn-sm"
+          >Delete</a></button>
+      </td>
+ </tr>
+     {% endfor %}
 
-  <H2>Prosello </H2> 
-  <H3>Property Management System</H3>
-  
-  <form method="post" action="{% url 'update_property' %}">
-    {% csrf_token%}
-    <button class="button edit_property" type="submit">EDIT PROPERTY</button>
-  </form>
+</table>
 
-<!--<button class="button view_property">View Property</button>-->
-
-<form method="post" action="{% url 'delete_property' %}">
-  {% csrf_token%}
-  <button class="button delete_property" type="submit">DELETE PROPERTY</button>
-</form>
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
+<button style="background-color:green;">
+    <a href="{% url 'userhome' %}"
+     class="btn btn-secondary btn-sm"
+      >Back</a></button>
+</body>
+</html>
 
 

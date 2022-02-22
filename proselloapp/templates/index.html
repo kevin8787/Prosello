@@ -9,18 +9,21 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
     <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" media="all" />
-    <script src='main.js'></script>
+    <!-- <script src='script.js'></script> -->
 
 </head>
 
 <body>
- 
-  <div class="wrapper fadeInDown">
+  <header>
+  <div class="websitename">
+  <h1><b>Prosello </b></h1><br>
+  <H3>Property Management System</H3>
+  </div>
+
     <div id="formContent">
       
-      <H2>Prosello </H2> 
-      <H3>Property Management System</H3>
-
+    
+    <div class="wrapper fadeInDown">
     <form align='center'  style=' color:rgb(249, 249, 255); background-color:rgba(50, 51, 56, 0.158);height:
  100px; margin-left: 500px;margin-right: 500px;margin-bottom:
   0px;position: relative; font-style: normal;font-size: 20px;font-weight: 300;border-radius: 20px ;' >
@@ -31,6 +34,7 @@
     <button class="button Register" class= "fadeIn first" formaction = "{% url 'register' %}">REGISTER</a></button>
   </div>
 </div>
+</header>
 </body>
 
 

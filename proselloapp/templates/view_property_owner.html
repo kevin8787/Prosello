@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Property Owner</title>
+    <h1>View Property Owner</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>View Property</title>
+    <link rel="stylesheet" href="{% static 'css/view.css' %}" type="text/css" media="all" />
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+    <body>
+        {% if prop %}
+        <h2>Properties</h2>
+        <!-- <h3>{{prop}}</h3> -->
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Price</th>
+                <th>Owner Name</th>
+                <th>Contact Number</th>
+            </tr>
+        <tr>
+            {% for pr in prop %}
+            <td>{{pr.property_name}}</td>
+            <td>{{pr.property_desc}}</td>
+            <td>{{pr.property_city}}</td>
+            <td>{{pr.property_address}}</td>
+            <td>{{pr.property_price}}</td>
+            <td>{{pr.property_owner}}</td>
+            <td>{{pr.property_contact}}</td>
+            <td><button style="background-color:green;">
+                <a
+                href="{% url 'delete_property_own' pr.id %}"
+                  class="btn btn-secondary btn-sm"
+                  >Delete</a></button>
+              </td>
+       
+        </tr>
+            {% endfor %}
+       
+       </table>
+       <button style="background-color:green;">
+           <a href="{% url 'ownerhome' %}"
+            class="btn btn-secondary btn-sm"
+             >Back</a></button>
+       
+       {% else %}
+        <h1>No Data</h1>
+       {% endif %}
+
+    </body>
+</html>
